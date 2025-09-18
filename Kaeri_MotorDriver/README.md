@@ -1,6 +1,6 @@
 # Kaeri_MotorDriver
 
-ESP32(Arduino 코어)에서 **5ms 백그라운드 PID**로 2개 모터를 제어하는 초간단 드라이버.
+ESP32(Arduino 코어)에서 **5ms 백그라운드 PID**로 2개 모터를 제어하는 드라이버 라이브러리.
 
 - 하드웨어 타이머 ISR → FreeRTOS 태스크 알림 → **PID 루프는 태스크에서 실행**
 - PWM은 **LEDC**를 사용(주기 고정, 듀티만 갱신)
@@ -18,3 +18,4 @@ ESP32(Arduino 코어)에서 **5ms 백그라운드 PID**로 2개 모터를 제어
 ## 주의
 - `TICKS_PER_REV`(엔코더 1회전 카운트) 값을 소스(`Kaeri_MotorDriver.cpp`)에서 **하드웨어에 맞게 조정**하세요.
 - PID는 기본 5ms 고정 샘플링(`DT_FIXED_S`)으로 계산합니다.
+
